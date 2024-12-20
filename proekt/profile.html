@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #302e34;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .block {
+            width: 400px;
+            height: 500px; 
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background-image: url('images\\photo5.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container h2 {
+            margin: 0 0 20px 0;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #FFD700;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .login-container button:hover {
+            background: #e0c100;
+        }
+        .login-container a {
+
+            display: block;
+            margin-top: 10px;
+            color: #e0c100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+            display: none;
+            margin-top: 10px;
+        }
+        #exitButton {
+            border: none;
+            padding: 0;
+            position: absolute;
+            right: 780px;
+            top:450px;
+        }
+        #exitButton a {
+            display: inline-block;
+            padding: 0;
+            border: none;
+        }
+        .exit {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s;
+        }
+        .exit:hover {
+            transform: scale(1.05);
+        }
+        #homeButton {
+            border: none;
+            padding: 0;
+            position: absolute;
+            right: 450px;
+            top:120px;
+        }
+        #homeButton a {
+            display: inline-block;
+            padding: 0;
+            border: none;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+        .home {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s;
+        }
+        .home:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="login-container">
+            <h2><b>Мой профиль</b></h2>
+            <div class="error" id="errorMessage"><b>Пароли не совпадают</b></div>
+            <input type="email" id="email" name="email" placeholder="E-mail" readonly>
+            <input type="password" id="password" name="password" placeholder="Password" readonly>
+        </div>
+        <button id="exitButton">
+             <img src="images\\exit.svg" alt="Login Button" class="exit">
+        </button>
+        <button id="homeButton">
+            <a href="index.html">
+                <img src="images\\home.png" alt="Login Button" class="home">
+            </a>
+        </button>
+    </div>
+        <script type="text/javascript">
+            document.ondragstart = noselect;
+            document.onselectstart = noselect;
+            document.oncontextmenu = noselect; function noselect() {return false;} 
+        </script>
+    <script type="module" src="myprof.js"></script>
+</body>
+</html>

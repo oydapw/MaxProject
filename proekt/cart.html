@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>tickets</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #302e34;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .block {
+            height: 725px;
+            width: 750px;
+            border-radius: 20px;
+            background-color: #302e34;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: 500px;
+            background-image: url('images\\bannercart.jfif');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .background-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.444);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content h1 {
+            margin-bottom: 140px;
+        }
+        .content p {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .ticket-search {
+            width: 100%;
+            background-color: #302e34;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .ticket-search h2 {
+            margin-top: 0;
+        }
+        .ticket-search .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .ticket-search .filters button {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .ticket-search .filters button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .ticket-search .ticket-options {
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+        }
+        .ticket-search .ticket-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+            font-weight: bold;
+        }
+        .ticket-search .ticket-option:last-child {
+            border-bottom: none;
+        }
+        .ticket-search .ticket-option .info {
+            display: flex;
+            align-items: center;
+        }
+        .ticket-search .ticket-option .info i {
+            margin-right: 5px;
+        }
+        .ticket-search .ticket-option .controls {
+            display: flex;
+            align-items: center;
+        }
+        .ticket-search .ticket-option .controls button {
+            background-color: #992017;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .ticket-search .ticket-option .controls button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .ticket-search .summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .ticket-search .summary p {
+            margin: 0;
+        }
+        .ticket-search .summary button {
+            background-color: #992017;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .ticket-search .summary button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            font-weight: bold;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        #loginButton {
+            border: none;
+            padding: 0;
+            position: absolute;
+            right: 0px;
+            top:0px;
+        }
+        #loginButton a {
+            display: inline-block;
+            padding: 0;
+            border: none;
+            background: rgba(0, 0, 0, 0.97);
+        }
+        .chel {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s;
+        }
+        .chel:hover {
+            transform: scale(1.05);
+        }
+        #homeButton {
+            border: none;
+            padding: 0;
+            position: absolute;
+            right: 630px;
+            top:0px;
+        }
+        #homeButton a {
+            display: inline-block;
+            padding: 0;
+            border: none;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: -1;
+        }
+        .home {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s;
+        }
+        .home:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="container">
+            <div class="background-image">
+                <div class="content">
+                    <h1><b>MAX KORZH</b></h1>
+                    <button id="loginButton">
+                        <a href="vhod.html">
+                            <img src="images\\cheliks.png" alt="Login Button" class="chel">
+                        </a>
+                    </button>
+                    <button id="homeButton">
+            <a href="index.html">
+                <img src="images\\home.png" alt="Login Button" class="home">
+            </a>
+        </button>
+                    <p>"Вход: 18:00 / Начало: 20:00 / НЕ РАЗРЕШАЕТСЯ ПРИНОСИТЬ РЮКЗАКИ, СУМКИ, ПАКЕТЫ (НЕЗАВИСИМО ОТ РАЗМЕРА) НА ТЕРРИТОРИЮ МЕРОПРИЯТИЯ. Информация о концерте: toursite.html/ Возрастные ограничения: Танцпол и фан-зона: с 18 лет / Трибуны: с 16 лет"</p>
+                </div>
+            </div>
+        </div>
+        <div class="ticket-search">
+            <div class="filters">
+            </div>
+            <div class="ticket-options">
+                <div class="ticket-option">
+                    <div class="info">
+                        <div>
+                            <p><strong>FAN ZONE</strong> - Сидячие места</p>
+                            <p>298 BYN</p>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button><b>-</b></button>
+                        <input type="text" id="fanZoneCount" value="0" readonly style="width: 30px; text-align: center;">
+                        <button><b>+</b></button>
+                    </div>
+                </div>
+                <div class="ticket-option">
+                    <div class="info">
+                        <div>
+                            <p><strong>DANCE FLOOR</strong> - Танцпол</p>
+                            <p>266 BYN</p>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button><b>-</b></button>
+                        <input type="text" id="danceFloorCount" value="0" readonly style="width: 30px; text-align: center;">
+                        <button><b>+</b></button>
+                    </div>
+                </div>
+            </div>
+            <div class="summary">
+                <p><b>Лимит билетов на мероприятие: 4</b></p>
+                <button>Купить билет</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.ondragstart = noselect;
+        document.onselectstart = noselect;
+        document.oncontextmenu = noselect; function noselect() {return false;} 
+    </script>
+</body>
+</html>
